@@ -5,6 +5,8 @@ import arrowOne from "../assets/Arrow1.png";
 import GitLogo from "../assets/GitHub.png";
 import bgImage from "../assets/background.png";
 import skillsImg from "../assets/SKILLSTXT.png";
+import linkedIn from "../assets/Lin.png";
+import tweet from "../assets/tweet.png";
 
 export default function Hero() {
   // Custom slow spin animation style
@@ -47,8 +49,8 @@ export default function Hero() {
         {/* 2. LOWER SECTION (Profile + About) */}
         <div className="mt-40 flex flex-col md:flex-row items-end gap-10 pb-20">
           <div className="w-48 h-56 bg-zinc-800 rounded-xl flex-shrink-0 border border-white/10 overflow-hidden relative shadow-2xl">
-             {/* Insert your <img> here */}
-             <div className="absolute inset-0 flex items-center justify-center text-zinc-500 text-xs">Profile Photo</div>
+            {/* Insert your <img> here */}
+            <div className="absolute inset-0 flex items-center justify-center text-zinc-500 text-xs">Profile Photo</div>
           </div>
 
           <div className="max-w pb-2 relative">
@@ -57,16 +59,12 @@ export default function Hero() {
               <span className="text-zinc-400">that really impact !</span>
             </h2>
             <p className="text-zinc-400 mt-4 text-sm leading-relaxed">
-              Hey, I'm Soumyaranjan — Full-Stack Developer & AI Enthusiast skilled in 
+              Hey, I'm Soumyaranjan — Full-Stack Developer & AI Enthusiast skilled in
               Generative AI, NLP, Deep Learning, and Data Visualization.
             </p>
 
             {/* --- ARROW POSITIONED TO MATCH YOUR MARKED AREA --- */}
-            <img
-              src={arrowOne}
-              className="absolute -top-24 -left-16 w-32 opacity-50 -rotate-[15deg] hidden lg:block"
-              alt="decoration"
-            />
+
           </div>
         </div>
       </div>
@@ -82,7 +80,7 @@ export default function Hero() {
         <img
           src={reactLogo}
           style={{ animation: "spin 20s linear infinite reverse" }}
-          className="absolute top-48 right-24 w-28"
+          className="absolute top-48 right-48 w-32 md:w-36 opacity-90 transition-all"
           alt="React"
         />
         <img
@@ -92,8 +90,27 @@ export default function Hero() {
         />
         <img
           src={msgLogo}
-          className="absolute bottom-16 right-44 w-16 animate-spin-very-slow"
+          style={{ animation: "spin 15s linear infinite" }}
+          className="absolute left-3/4 top-1/3 -translate-y-1/2 -translate-x-1/2 ml-48 w-24 md:w-28 opacity-90 transition-all"
           alt="Message"
+        />
+        <img
+          src={linkedIn}
+          style={{ animation: "spin 15s linear infinite" }}
+          className="absolute left-3/4 top-1/4 -translate-y-1/2 -translate-x-1/2 -ml-24 w-16 opacity-90 transition-all"
+          alt="LinkedIn"
+        />
+        <img
+          src={tweet}
+          style={{ animation: "spin 15s linear infinite" }}
+          className="absolute left-3/4 top-1/2 -translate-y-1/2 -translate-x-1/2 -mt-12 w-20 opacity-90 rotate-20 transition-all"
+          alt="tweet"
+        />
+
+        <img
+          src={arrowOne}
+          className="absolute left-3/4 top-1/2 -translate-y-1/2 -translate-x-1/2 mt-12 -ml-24 w-32 opacity-90 transition-all"
+          alt="decoration"
         />
       </div>
 
@@ -112,7 +129,8 @@ export default function Hero() {
       </div>
 
       {/* Standard CSS for the spin keyframe if Tailwind's animate-spin is missing */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
