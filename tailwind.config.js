@@ -1,11 +1,10 @@
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+// tailwind.config.js
+module.exports = {
   theme: {
     extend: {
       animation: {
-        'spin-very-slow': 'spin 20s linear infinite',
-      },
+        'spin-slow': 'spin 10s linear infinite',
+      }
     },
   },
-  plugins: [],
 }

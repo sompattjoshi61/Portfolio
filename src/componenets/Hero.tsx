@@ -4,11 +4,17 @@ import msgLogo from "../assets/Paper Plane.png";
 import arrowOne from "../assets/Arrow1.png";
 import GitLogo from "../assets/GitHub.png";
 import bgImage from "../assets/background.png";
+import skillsImg from "../assets/SKILLSTXT.png";
 
 export default function Hero() {
+  // Custom slow spin animation style
+  const slowSpin = {
+    animation: "spin 15s linear infinite",
+  };
+
   return (
     <section
-      className="relative min-h-screen pt-32 px-16 text-white overflow-hidden bg-black"
+      className="relative min-h-screen pt-32 px-6 md:px-16 text-white overflow-hidden bg-black"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
@@ -16,83 +22,102 @@ export default function Hero() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* MAIN GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* 1. TOP HERO TEXT */}
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="space-y-4">
+          <h2 className="text-2xl flex items-center gap-2">
+            Hi <span className="animate-bounce">👋</span>
+          </h2>
 
-        {/* LEFT CONTENT */}
-        <div className="space-y-6">
-          <h1 className="text-2xl flex items-center gap-2">
-            Hi <span>👋</span>
+          <h1 className="text-5xl md:text-7xl font-bold font-mono leading-tight tracking-tighter">
+            {"<h1>"} soumyaranjan <br />
+            Pattjoshi {"</h1>"}
           </h1>
 
-          <h1 className="text-4xl md:text-5xl font-bold font-mono leading-tight">
-            {"<h1> soumyaranjan"} <br />
-            {"Pattjoshi </h1>"}
-          </h1>
-
-          <div className="flex gap-4">
-            <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+          <div className="flex gap-4 pt-4">
+            <button className="bg-white text-black px-8 py-2.5 rounded-full font-bold hover:scale-105 transition-all">
               Resume
             </button>
-            <button className="bg-white/10 border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
+            <button className="bg-white/10 border border-white/20 backdrop-blur-md px-8 py-2.5 rounded-full hover:bg-white/20 transition-all">
               Know More
             </button>
           </div>
         </div>
 
-        {/* RIGHT FLOATING ICONS */}
-        <div className="relative h-[400px]">
+        {/* 2. LOWER SECTION (Profile + About) */}
+        <div className="mt-40 flex flex-col md:flex-row items-end gap-10 pb-20">
+          <div className="w-48 h-56 bg-zinc-800 rounded-xl flex-shrink-0 border border-white/10 overflow-hidden relative shadow-2xl">
+             {/* Insert your <img> here */}
+             <div className="absolute inset-0 flex items-center justify-center text-zinc-500 text-xs">Profile Photo</div>
+          </div>
 
-          <img
-            src={GitLogo}
-            className="absolute top-10 right-20 w-20 animate-spin-very-slow"
-            alt="GitHub"
-          />
+          <div className="max-w pb-2 relative">
+            <h2 className="text-4xl font-bold leading-tight">
+              Passionate about building tools & SaaS <br />
+              <span className="text-zinc-400">that really impact !</span>
+            </h2>
+            <p className="text-zinc-400 mt-4 text-sm leading-relaxed">
+              Hey, I'm Soumyaranjan — Full-Stack Developer & AI Enthusiast skilled in 
+              Generative AI, NLP, Deep Learning, and Data Visualization.
+            </p>
 
-          <img
-            src={reactLogo}
-            className="absolute top-40 right-40 w-20 animate-spin-very-slow"
-            alt="React"
-          />
-
-          <img
-            src={emailLogo}
-            className="absolute bottom-32 right-24 w-16 animate-spin-very-slow"
-            alt="Email"
-          />
-
-          <img
-            src={msgLogo}
-            className="absolute bottom-16 right-44 w-16 animate-spin-very-slow"
-            alt="Message"
-          />
+            {/* --- ARROW POSITIONED TO MATCH YOUR MARKED AREA --- */}
+            <img
+              src={arrowOne}
+              className="absolute -top-24 -left-16 w-32 opacity-50 -rotate-[15deg] hidden lg:block"
+              alt="decoration"
+            />
+          </div>
         </div>
       </div>
 
-      {/* ABOUT CARD */}
-      <div className="mt-24 max-w-xl bg-black/60 backdrop-blur-lg border border-white/10 rounded-xl p-6">
-        <h2 className="text-xl font-semibold">
-          Passionate about building tools & SaaS
-        </h2>
-        <p className="text-gray-300 mt-2 text-sm">
-          that really impact!
-          <br />
-          I’m Soumyaranjan — Full-Stack Developer & AI enthusiast building
-          scalable, performant, and beautifully designed products.
-        </p>
+      {/* 3. FLOATING ICONS (With Inline Spinning) */}
+      <div className="hidden lg:block">
+        <img
+          src={GitLogo}
+          style={slowSpin}
+          className="absolute top-24 right-48 w-20 opacity-80"
+          alt="GitHub"
+        />
+        <img
+          src={reactLogo}
+          style={{ animation: "spin 20s linear infinite reverse" }}
+          className="absolute top-48 right-24 w-28"
+          alt="React"
+        />
+        <img
+          src={emailLogo}
+          className="absolute top-48 right-10 w-20 animate-spin-very-slow"
+          alt="Email"
+        />
+        <img
+          src={msgLogo}
+          className="absolute bottom-16 right-44 w-16 animate-spin-very-slow"
+          alt="Message"
+        />
       </div>
 
-      {/* SCROLL ARROW */}
-      <img
-        src={arrowOne}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-10 animate-bounce"
-        alt="Scroll"
-      />
-
-      {/* SKILLS LABEL */}
-      <div className="absolute right-4 bottom-32 rotate-90 text-gray-400 tracking-widest">
-        SKILLS
+      {/* 4. THE VERTICAL SKILLS IMAGE (At the bottom-right end) */}
+      <div className="absolute right-0 bottom-10 z-20">
+        <img
+          src={skillsImg}
+          alt="Skills"
+          className="w-32 md:w-44 opacity-0"
+        />
+        <img
+          src={skillsImg}
+          alt="Skills"
+          className="absolute right-4 bottom-5 w-20 opacity-90"
+        />
       </div>
+
+      {/* Standard CSS for the spin keyframe if Tailwind's animate-spin is missing */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}} />
     </section>
   );
 }
