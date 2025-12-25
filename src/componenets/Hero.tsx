@@ -7,6 +7,7 @@ import bgImage from "../assets/background.png";
 import skillsImg from "../assets/SKILLSTXT.png";
 import linkedIn from "../assets/Lin.png";
 import tweet from "../assets/tweet.png";
+import profile from "../assets/Profiles.jpg"
 
 export default function Hero() {
   // Custom slow spin animation style
@@ -31,7 +32,7 @@ export default function Hero() {
             Hi <span className="animate-bounce">👋</span>
           </h2>
 
-          <h1 className="text-5xl md:text-7xl font-bold font-mono leading-tight tracking-tighter">
+          <h1 className="text-4xl md:text-7xl font-semi-bold font-mono leading-tight tracking-tighter">
             {"<h1>"} soumyaranjan <br />
             Pattjoshi {"</h1>"}
           </h1>
@@ -49,11 +50,14 @@ export default function Hero() {
         {/* 2. LOWER SECTION (Profile + About) */}
         <div className="mt-40 flex flex-col md:flex-row items-end gap-10 pb-20">
           <div className="w-48 h-56 bg-zinc-800 rounded-xl flex-shrink-0 border border-white/10 overflow-hidden relative shadow-2xl">
-            {/* Insert your <img> here */}
-            <div className="absolute inset-0 flex items-center justify-center text-zinc-500 text-xs">Profile Photo</div>
+            <img
+              src={profile}
+              alt="Soumyaranjan Profile"
+              className="w-full h-full object-cover"
+            />
           </div>
 
-          <div className="max-w pb-2 relative">
+          <div className="max-w pb-2 relative -mt-48"> {/* Changed from -mt-24 to -mt-48 */}
             <h2 className="text-4xl font-bold leading-tight">
               Passionate about building tools & SaaS <br />
               <span className="text-zinc-400">that really impact !</span>
@@ -62,9 +66,6 @@ export default function Hero() {
               Hey, I'm Soumyaranjan — Full-Stack Developer & AI Enthusiast skilled in
               Generative AI, NLP, Deep Learning, and Data Visualization.
             </p>
-
-            {/* --- ARROW POSITIONED TO MATCH YOUR MARKED AREA --- */}
-
           </div>
         </div>
       </div>
