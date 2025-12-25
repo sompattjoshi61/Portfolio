@@ -58,14 +58,15 @@ export default function Hero() {
             />
           </div>
 
-          <div className="max-w pb-2 relative -mt-48"> {/* Changed from -mt-24 to -mt-48 */}
+          <div className="max-w pb-2 relative -mt-48">
             <h2 className="text-4xl font-bold leading-tight">
               Passionate about building tools & SaaS <br />
               <span className="text-zinc-400">that really impact !</span>
             </h2>
+            {/* Changed mt-12 to mt-4 to close the gap */}
             <p className="text-zinc-400 mt-4 text-sm leading-relaxed">
-              Hey, I'm Soumyaranjan — Full-Stack Developer & AI Enthusiast skilled in
-              Generative AI, NLP, Deep Learning, and Data Visualization.
+              Hi, I’m Soumyaranjan — A Full-Stack SaaS Developer & UI/UX Designer who builds fast, scalable web applications
+              <br></br> and end-to-end products. I enjoy turning complex ideas into simple, intuitive digital experiences that solve<br></br> real problems.
             </p>
           </div>
         </div>
