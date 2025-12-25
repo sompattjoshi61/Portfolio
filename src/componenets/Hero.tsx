@@ -8,6 +8,7 @@ import skillsImg from "../assets/SKILLSTXT.png";
 import linkedIn from "../assets/Lin.png";
 import tweet from "../assets/tweet.png";
 import profile from "../assets/Profiles.jpg"
+import arrowTwo from "../assets/Arrow2.png";
 
 export default function Hero() {
   // Custom slow spin animation style
@@ -28,7 +29,7 @@ export default function Hero() {
       {/* 1. TOP HERO TEXT */}
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="space-y-4">
-          <h2 className="text-2xl flex items-center gap-2">
+          <h2 className="text-4xl flex items-center gap-2">
             Hi <span className="animate-bounce">👋</span>
           </h2>
 
@@ -112,6 +113,11 @@ export default function Hero() {
           src={arrowOne}
           className="absolute left-3/4 top-1/2 -translate-y-1/2 -translate-x-1/2 mt-12 -ml-24 w-32 opacity-90 transition-all"
           alt="decoration"
+        />
+        <img
+          src={arrowTwo}
+          className="absolute left-1/4 top-1/2 -translate-y-1/2 -translate-x-1/2 mt-12 ml-24 w-55 opacity-90 transition-all"
+          alt="arrowTwo"
         />
       </div>
 
